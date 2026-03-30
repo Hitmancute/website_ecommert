@@ -27,6 +27,13 @@ class Sidebar extends Component
                 'active'  => 'home',
                 'icon'  => 'ti-brand-windows',
             ],
+            [
+                'type'  => 'menu',
+                'name'  => 'Categories',
+                'route'  => 'data-category.index',
+                'active'  => 'data-categories.*',
+                'icon'  => 'ti-category',
+            ],
         ];
     }
 

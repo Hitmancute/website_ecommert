@@ -9,7 +9,7 @@
             @else
                 <li class="sidebar-item">
                     <a class="sidebar-link {{ request()->routeIs($item['active']) ? ' active' : '' }}"
-                        href="{{ $item['route'] }}" aria-expanded="false">
+                        href="{{ route($item['route']) }}" aria-expanded="false">
                         <span>
                             <i class="ti {{ $item['icon'] }}"></i>
                         </span>
