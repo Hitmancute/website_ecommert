@@ -31,7 +31,7 @@ class Sidebar extends Component
                 'type'  => 'menu',
                 'name'  => 'Categories',
                 'route'  => 'data-category.index',
-                'active'  => 'data-categories.*',
+                'active'  => 'data-category.*',
                 'icon'  => 'ti-category',
             ],
         ];

@@ -16,8 +16,8 @@ class FormCategory extends Component
     {
         $this->action = route('data-category.store');
         $this->category = $category;
-        if($category){
-            $this->action = route('data-category.store',$category->id);
+        if ($category) {
+            $this->action = route('data-category.update', $category->id);
         }
     }
 
