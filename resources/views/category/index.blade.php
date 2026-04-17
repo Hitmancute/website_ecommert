@@ -23,7 +23,7 @@
                                         <i class="ti ti-trash"></i>
                                         Delete
                                     </a>
-                                    <a href="#" class="btn btn-info">
+                                    <a href="{{ route('data-category.show', $category->slug) }}" class="btn btn-info">
                                         <i class="ti ti-basket"></i>
                                         Detail
                                     </a>

@@ -45,9 +45,16 @@ class CategoryController extends Controller
 
     public function edit($slug)
     {
-        $category = Category::where('slug', $slug)->firstOrFail();
+        $category = Category::where('slug', $slug)->first();
         $category->image = asset('storage/category/' . $category->image);
         return view('category.edit', compact('category'));
+    }
+
+    public function show($slug)
+    {
+        $category = Category::where('slug', $slug)->first();
+        $category->image = asset('storage/category/'. $category->image);
+        return view('category.show', compact('category'));
     }
 
     public function update(CategoryUpdateRequest $request)
