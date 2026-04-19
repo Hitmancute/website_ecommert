@@ -39,7 +39,7 @@ class CategoryController extends Controller
             "slug"              => $slug,
             "image"             => $fileName,
         ]);
-        toast('Success', 'Category created successfully!!');
+        toast()->success('Category created successfully!!');
         return Redirect()->route('data-category.index');
     }
 
@@ -53,7 +53,7 @@ class CategoryController extends Controller
     public function show($slug)
     {
         $category = Category::where('slug', $slug)->first();
-        $category->image = asset('storage/category/'. $category->image);
+        $category->image = asset('storage/category/' . $category->image);
         return view('category.show', compact('category'));
     }
 
@@ -78,7 +78,7 @@ class CategoryController extends Controller
             $dataCategory->image = $fileName;
             $dataCategory->save();
         }
-        toast('Success', 'Category Update successfully!!');
+        toast()->success('Category Update successfully!!');
         return Redirect()->route('data-category.index');
     }
 
@@ -87,7 +87,7 @@ class CategoryController extends Controller
         $category = Category::where('slug', $slug)->first();
         Storage::disk('public')->delete('caregory/' . $category->image);
         $category->delete();
-        toast('Success', 'Category delete successfully!!');
+        toast()->success('Category delete successfully!!');
         return Redirect()->route('data-category.index');
     }
 }

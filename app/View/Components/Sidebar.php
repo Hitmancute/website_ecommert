@@ -34,6 +34,13 @@ class Sidebar extends Component
                 'active'  => 'data-category.*',
                 'icon'  => 'ti-category',
             ],
+            [
+                'type'  => 'menu',
+                'name'  => 'Products',
+                'route'  => 'data-product.index',
+                'active'  => 'data-product.*',
+                'icon'  => 'ti-chef-hat',
+            ],
         ];
     }
 
