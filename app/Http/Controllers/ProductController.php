@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -15,5 +14,9 @@ class ProductController extends Controller
             return $q;
         });
         return view('product.index',compact('products'));
+    }
+
+    public function create(){
+        return view('product.create');
     }
 }

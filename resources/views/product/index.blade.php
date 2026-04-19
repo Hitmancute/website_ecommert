@@ -1,8 +1,12 @@
 @extends('layouts.admin')
 @section('content')
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex align-items-center justify-content-between">
             <h4 class="card-title">Data Produt</h4>
+            <a href="{{ route('data-product.create') }}" class="btn btn-primary">
+                <i class="ti ti-plus"></i>
+                New Product
+            </a>
         </div>
         <div class="card-body">
             <table class="table">
