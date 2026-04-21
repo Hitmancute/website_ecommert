@@ -3,7 +3,7 @@
         @csrf
         @if ($category)
             @method('PUT')
-            <input type="hidden" name="id" value="{{ $category->id }}">
+            <input type="hidden" name="id" value="{{ $category->id }}"> 
             <div>
                 <img src="{{ $category->image }}" alt="{{ $category->category_name }}" class="img-fluid">
             </div>
