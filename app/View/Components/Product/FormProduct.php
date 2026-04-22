@@ -16,9 +16,9 @@ class FormProduct extends Component
     public function __construct($product =null)
     {
         $this->product = $product;
-        $this->action = route('data-product.create');
-        if(!empty($product)){
-            $this->action = route('data-product.edit');
+        $this->action = route('data-product.store');
+        if($product){
+            $this->action = route('data-product.update',$product->id);
         }
         $this->categories = Category::orderBy('category_name','ASC')->get();
     }

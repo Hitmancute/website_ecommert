@@ -10,7 +10,7 @@
     @endif
     <form action="{{ $action }}" class="card" method="POST" enctype="multipart/form-data">
         @csrf
-        @if (!empty($product))
+        @if ($product)
             @method('PUT')
         @endif
         <div class="card-header d-flex align-items-center justify-content-between">
@@ -168,12 +168,19 @@
                         is_active: active
                     };
                 } else {
-                    variants.push({
-                        id: null,
-                        variant_name: name,
-                        price: price,
-                        is_active: active
-                    });
+                    const existingVariant = variants.find(v => v.variant_name === name);
+                    if(existingVariant){
+                        existingVariant.price = price;
+                        existingVariant.is_active = active;
+                    }else{
+                        variants.push({
+                            id: null,
+                            variant_name: name,
+                            price: price,
+                            is_active: active
+                        });
+
+                    }
                 }
 
                 renderVariant();

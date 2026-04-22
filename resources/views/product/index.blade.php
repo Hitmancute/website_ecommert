@@ -32,6 +32,12 @@
                                     class="badge rounded-all {{ $product->is_active ? 'text-primary' : 'text-bg-warning' }}">
                                     {{ $product->is_active ? 'Active' : 'No Active' }}</span>
                             </td>
+                            <td>
+                                <div class="">
+                                    <a href="{{ route('data-product.edit', $product->id) }}" class="btn btn-info btn-sm">Edit
+                                    </a>
+                                </div>
+                            </td>
                         </tr>
                     @empty
                         <tr>
