@@ -11,6 +11,7 @@
     <form action="{{ $action }}" class="card" method="POST" enctype="multipart/form-data">
         @csrf
         @if ($product)
+            <input type="hidden" name="id" value="{{ $product->id }}">
             @method('PUT')
         @endif
         <div class="card-header d-flex align-items-center justify-content-between">
@@ -85,8 +86,7 @@
                         </div>
                         <div class="col-2 d-flex justify-content-center align-items-center">
                             <label for="" class="form-check">
-                                <input type="checkbox" id="variant_is_active" id="variant_is_active"
-                                    class="form-check-input">
+                                <input type="checkbox" id="variant_is_active" class="form-check-input">
                                 <span class="form-check-label">Set Active?</span>
                             </label>
                         </div>
@@ -133,7 +133,6 @@
 
             let variants = [];
             let editingIndex = null;
-
             const initialvariants = $("#initial_variants").val();
             if (initialvariants) {
                 try {
@@ -169,10 +168,10 @@
                     };
                 } else {
                     const existingVariant = variants.find(v => v.variant_name === name);
-                    if(existingVariant){
+                    if (existingVariant) {
                         existingVariant.price = price;
                         existingVariant.is_active = active;
-                    }else{
+                    } else {
                         variants.push({
                             id: null,
                             variant_name: name,
@@ -219,6 +218,7 @@
 
                 $("#table-variant").html(html);
                 $("#variants").val(JSON.stringify(variants));
+
             }
 
             function resetVariantForm() {

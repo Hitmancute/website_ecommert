@@ -36,6 +36,8 @@
                                 <div class="">
                                     <a href="{{ route('data-product.edit', $product->id) }}" class="btn btn-info btn-sm">Edit
                                     </a>
+                                    <a href="{{ route('data-product.destroy', $product->id) }}" data-confirm-delete="true" class="btn btn-danger btn-sm">Hapus
+                                    </a>
                                 </div>
                             </td>
                         </tr>
